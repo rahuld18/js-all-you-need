@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+
+		body{
+			background: #202222;
+			color:white;
+		}
+
+		button{
+			width: 100px;
+			height: 35px;
+			background: #202222;
+			border: 3px solid white;
+			border-radius: 50px;
+			color:white;
+			cursor: pointer;
+			outline:none;
+		}
+
+		#stopwatch{
+			font-size: 100px;
+			position: absolute;
+			top:40%;
+			left:40%;
+
+		}
+
+		#buttons{
+			position: absolute;
+			top:60%;
+			left:37%;
+
+		}
+
+		#buttons li{
+			display: inline;
+			padding-left: 10px;
+		}
+		
+
+	</style>
+</head>
+<script type="text/javascript">
+
+
+
+	let hr=0;
+	let min =0;
+	let sec=0;
+
+	let stopTime=true;
+
+
+	function startTimer(){
+		console.log('start');
+
+		if(stopTime === true){
+			stopTime=false;
+
+			timerCycle()
+		}
+
+
+	console.log(stopTime)
+
+	}
+
+	function stopTimer(){
+		console.log('stop')
+		if(stopTime === false){
+			stopTime=true;
+		}
+
+	console.log(stopTime)
+
+	}
+
+	function resetTimer(){
+		console.log('reset')
+		stopTime = true
+		hr=0;
+		min=0;
+		sec=0;
+		document.getElementById('stopwatch')
+				.innerHTML='00:00:00';
+	}
+
+	function timerCycle(){
+		if(stopTime === false){
+
+				sec=parseInt(sec);
+				min=parseInt(min);
+				hr=parseInt(hr)
+
+				sec=sec+1
+
+				if(sec === 60){
+					min=min+1;
+					sec=0;
+				}
+
+				if(min === 60){
+					hr=hr+1;
+					sec=0;
+					min=0;
+				}
+
+				if ( sec<10 || sec===0){
+					sec='0'+sec
+				}
+				if ( min<10 || min===0){
+					min='0'+min
+				}
+				if ( hr<10 || hr===0){
+					hr='0'+hr
+				}
+
+				document.getElementById('stopwatch')
+				.innerHTML=hr + ':' +min +':'+sec;
+
+				setTimeout("timerCycle()",1000)
+
+		}
+
+	}
+
+
+</script>
+<body>
+
+
+	<div id="stopwatch">
+		00:00:00
+	</div>
+
+
+		<ul id="buttons">
+	<li><button onclick="startTimer()">Start</button></li>
+	<li><button onclick="stopTimer()">Stop</button></li>
+	<li><button onclick="resetTimer()">Reset</button></li>
+</ul>
+
+
+
+</body>
+</html>

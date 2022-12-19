@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+
+<script type="text/javascript">
+
+
+  async	function firstFunc(){
+  	let response =await fetch('https://dummyjson.com/products/1');
+  	let json = await response.json()
+  	console.log(json)
+
+
+	}
+	
+	firstFunc()
+
+
+	// let response1 = fetch('https://dummyjson.com/products/2');
+	// console.log('response',response);
+
+	// response.then((responseObject)=>{
+
+	// 	let json = responseObject.json();
+
+	// 	json.then((data)=>{
+	// 		console.log('data',data)
+	// 	})
+
+
+	// })
+
+
+// response
+// .then((responseObject)=> responseObject.json())
+// .then((data)=>{
+// 			console.log('data',data)
+// 		})
+// .catch(error=>console.log('err',error))
+
+	// Promise.all([response,response1])
+	// .then(res=>console.log(res))
+
+
+
+</script>
+<body>
+<h1>Async</h1>
+</body>
+</html>

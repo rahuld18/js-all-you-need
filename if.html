@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+
+<script type="text/javascript">
+
+	let num=11;
+	let num1=4
+
+	
+
+	if( num === 1 && num1 !==3 ){
+		console.log('Equals to 1 and 3');
+
+	}
+	else if (num > 2){
+       console.log('Greater than');
+
+	}
+	else if (num < 2){
+       console.log('Lesser than');
+
+	}
+
+
+
+	// condition ? true:false;
+	
+	(num === 1) ? console.log('true') : console.log('false')
+
+
+
+
+	let array=['moon','sun','galaxy','night'];
+
+	// array.map((a)=>console.log(a));
+
+    // for (const a of array){
+    // 	console.log(a)
+    // }
+
+		for ( let i=10; i>=1;i-- ){
+			if( i === 5){
+				continue;
+			}
+			console.log(i)
+			}
+
+
+
+	function firstFunction(){
+		console.log('first');
+		console.log('Second');
+		console.log('Third');
+
+	}
+
+	firstFunction();
+	
+
+	function addNumber(a,b){
+		
+		return (a+b)
+
+	}
+
+	let result=addNumber(2,81);
+	console.log('result',result)
+
+
+
+
+	function calculator(condition,a,b){
+		let test="test";
+		console.log(result,"test")
+		if(condition === 'add'){
+			return (a+b)
+		}
+		else if (condition === 'sub'){
+			return (a-b)
+		}
+		else if (condition === 'mul'){
+			return (a*b)
+		}
+		
+		
+
+	}
+
+
+	let addedNum=calculator('add',2,3);
+	console.log('addedNum',addedNum)
+
+		let subtractNum=calculator('sub',4,1);
+	console.log('subtractNum',subtractNum)
+
+
+		let multiplyNum=calculator('mul',4,2);
+	console.log('multiplyNum',multiplyNum)
+
+
+	
+
+function random(number) {
+  return Math.floor(Math.random() * (number+1));
+}
+
+window.onload=function(){
+
+ const btn = document.querySelector('button');
+  btn.addEventListener('click', () => { 
+  	
+  	const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+  	 document.body.style.backgroundColor = rndCol; 
+
+});
+
+
+
+ 
+
+const form = document.querySelector('form');
+const fname = document.getElementById('fname');
+const lname = document.getElementById('lname');
+const para = document.querySelector('p');
+
+form.addEventListener('submit', (e) => {
+  if (fname.value === '' || lname.value === '') {
+    e.preventDefault()
+    para.textContent = 'You need to fill in both names!';
+  }
+});
+}
+
+</script>
+<body>
+<h1>Inside</h1>
+<button >click</button>
+<form>
+  <div>
+    <label for="fname">First name: </label>
+    <input id="fname" type="text" />
+  </div>
+  <div>
+    <label for="lname">Last name: </label>
+    <input id="lname" type="text" />
+  </div>
+  <div>
+    <input id="submit" type="submit" />
+  </div>
+</form>
+<p></p>
+</body>
+</html>
